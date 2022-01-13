@@ -1,34 +1,37 @@
 import React from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 
 export const getStaticPaths = async () => {
-    const res = await fetch('https://jsonplaceholder.typicode.com/users');
+    const res = await fetch('http://localhost:1337/api/courses');
     const data = await res.json();
 
-    const paths = data.map(course => {
-        return { params: { id: course.id.toString() } };
+    const paths = data.data.map(course => {
+        return { params: { courseid: course.id.toString() } };
     })
 
     return { paths, fallback: false };
 }
 
 export const getStaticProps = async (context) => {
-    const id = context.params.id;
-    const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+    const id = context.params.courseid;
+    const res = await fetch(`http://localhost:1337/api/courses/${id}`);
     const data = await res.json();
 
-    return { props: { course: data } };
+    console.log(data);
+    return { props: { course: data.data } };
 }
 
 const CourseDetails = ({ course }) => {
     return ( 
         <>
             <Head>
-                <title>{course.title} | STEAM Express</title>
+                <title>{course.attributes.Title} | STEAM Express</title>
             </Head>
             <div>
-                <h1>Course</h1>
-                <p>{ course.description }</p>
+                <Image src={course.attributes.image} alt={course.attributes.Title} width={400} height={400} />
+                <h1>{course.attributes.Title}</h1>
+                <p>{ course.attributes.Description }</p>
             </div>
         </>
      );
