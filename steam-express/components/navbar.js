@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';   
+import Button from "@mui/material/Button";
 
 const Navbar = () => {
     return (
@@ -11,10 +12,11 @@ const Navbar = () => {
                 </Link>
             </div>
             <Link href="/"><a>Home</a></Link>
-            <Link href="/about"><a>About</a></Link>
             <Link href="/courses"><a>Courses</a></Link>
-            <Link href="/teachers"><a>Teachers</a></Link>
             <Link href="/contact"><a>Contact</a></Link>
+            <Link href="/teachers"><a>Teachers</a></Link>
+            <Link href="/about"><a>About</a></Link>
+            <Link href="/trial"><Button className="trialBtn">Book a Trial</Button></Link>
         </nav>
     );
 }

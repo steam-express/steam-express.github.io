@@ -24,6 +24,12 @@ nav {
   border-bottom: 1px solid #eaeaea;
 }
 
+nav .trialBtn {
+  margin-left: 1rem;
+  background-color: rgb(20, 183, 189);
+  color: #fafafa;
+}
+
 nav a {
   margin-left: 1rem;
 }
