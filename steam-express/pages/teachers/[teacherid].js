@@ -26,7 +26,7 @@ const TeacherDetails = ({ teacher }) => {
     return ( 
         <>
             <Head>
-                <title>{teacher.attributes.Title} | STEAM Express</title>
+                <title>{teacher.attributes.Name} | STEAM Express</title>
             </Head>
             <div>
                 {/* <Image src={course.attributes.image} alt={course.attributes.Title} width={400} height={400} /> */}
