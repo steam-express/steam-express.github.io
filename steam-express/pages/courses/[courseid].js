@@ -29,9 +29,12 @@ const CourseDetails = ({ course }) => {
                 <title>{course.attributes.Title} | STEAM Express</title>
             </Head>
             <div>
-                <Image src={course.attributes.image} alt={course.attributes.Title} width={400} height={400} />
+                {/* <Image src={course.attributes.image} alt={course.attributes.Title} width={400} height={400} /> */}
                 <h1>{course.attributes.Title}</h1>
-                <p>{ course.attributes.Description }</p>
+                <h3>Introduction</h3>
+                <p>{course.attributes.Introduction}</p>
+                <h3>Learning Objectives</h3>
+                <p>{course.attributes.LearningObjectives}</p>
             </div>
         </>
      );
