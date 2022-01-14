@@ -24,29 +24,29 @@ export const getStaticProps = async () => {
 
 const Courses = ({ teachers }) => {
     return (
-        <div>
-            <h1>All Courses</h1>
-            {teachers.data.map(teacher => (
-                <Card key={teacher.id} variant="outlined">
-                    <CardActionArea href={`/teachers/${teacher.id}`} key={teacher.id}>
-                        <CardMedia
-                            component="img"
-                            alt={teacher.attributes.Name}
-                            height="140"
-                            image={teacher.attributes.Image}
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="h2">
-                                {teacher.attributes.Name}
-                            </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p">
-                                {teacher.attributes.Description}
-                            </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                </Card>
-            ))}
-        </div>
+        <>
+            <Head>Our Teachers | STEAM Express</Head>
+            <div>
+                <h1>Our Teachers</h1>
+                {teachers.data.map(teacher => (
+                    <Card key={teacher.id} variant="outlined">
+                        <CardActionArea href={`/teachers/${teacher.id}`} key={teacher.id}>
+                            <CardMedia
+                                component="img"
+                                alt={teacher.attributes.Name}
+                                height="140"
+                                image={teacher.attributes.Image}
+                            />
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="h2">
+                                    {teacher.attributes.Name}
+                                </Typography>
+                            </CardContent>
+                        </CardActionArea>
+                    </Card>
+                ))}
+            </div>
+        </>
     );
 }
 

@@ -24,29 +24,32 @@ export const getStaticProps = async () => {
 
 const Courses = ({ courses }) => {
     return (
-        <div>
-            <h1>All Courses</h1>
-            {courses.data.map(course => (
-                <Card key={course.id} variant="outlined">
-                    <CardActionArea href={`/courses/${course.id}`} key={course.id}>
-                        <CardMedia
-                            component="img"
-                            alt={course.attributes.Title}
-                            height="140"
-                            image={course.attributes.image}
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="h2">
-                                {course.attributes.Title}
-                            </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p">
-                                {course.attributes.Description}
-                            </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                </Card>
-            ))}
-        </div>
+        <>
+            <Head>All Courses | STEAM Express</Head>
+            <div>
+                <h1>All Courses</h1>
+                {courses.data.map(course => (
+                    <Card key={course.id} variant="outlined">
+                        <CardActionArea href={`/courses/${course.id}`} key={course.id}>
+                            <CardMedia
+                                component="img"
+                                alt={course.attributes.Title}
+                                height="140"
+                                image={course.attributes.image}
+                            />
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="h2">
+                                    {course.attributes.Title}
+                                </Typography>
+                                <Typography variant="body2" color="textSecondary" component="p">
+                                    {course.attributes.Description}
+                                </Typography>
+                            </CardContent>
+                        </CardActionArea>
+                    </Card>
+                ))}
+            </div>
+        </>
     );
 }
 
