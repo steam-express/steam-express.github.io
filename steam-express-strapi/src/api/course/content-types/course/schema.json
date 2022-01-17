@@ -45,6 +45,9 @@
     },
     "Syllabus": {
       "type": "richtext"
+    },
+    "ImageUrl": {
+      "type": "string"
     }
   }
 }

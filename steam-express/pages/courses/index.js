@@ -8,8 +8,10 @@ import CardMedia from '@mui/material/CardMedia';
 import CardActions from '@mui/material/CardActions';
 import CardActionArea from '@mui/material/CardActionArea';
 import Typography from '@mui/material/Typography';
+import { Grid } from '@mui/material';
 // import { CardActionArea } from '@mui/material';
 
+import styles from '../../styles/courses.module.css';
 
 export const getStaticProps = async () => {
     const res = await fetch('http://localhost:1337/api/courses');
@@ -25,29 +27,41 @@ export const getStaticProps = async () => {
 const Courses = ({ courses }) => {
     return (
         <>
-            <Head>All Courses | STEAM Express</Head>
-            <div>
+            <Head>
+                <title>All Courses | STEAM Express</title>
+                <link rel="icon" href="/steam-express-logo.ico" />
+            </Head>
+            <div className="screen">
                 <h1>All Courses</h1>
-                {courses.data.map(course => (
-                    <Card key={course.id} variant="outlined">
-                        <CardActionArea href={`/courses/${course.id}`} key={course.id}>
-                            <CardMedia
-                                component="img"
-                                alt={course.attributes.Title}
-                                height="140"
-                                image={course.attributes.image}
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">
-                                    {course.attributes.Title}
-                                </Typography>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                    {course.attributes.Description}
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
-                ))}
+                <Grid container
+                    spacing={2}
+                    className="courseGrid"
+                    alignItems="center"
+                    justifyContent="center"
+                >
+                    {courses.data.map(course => (
+                        <Grid item>
+                            <Card key={"card_" + course.id} variant="outlined" className={styles.courseCard}>
+                                <CardActionArea href={`/courses/${course.id}`} key={course.id}>
+                                    <CardMedia
+                                        component="img"
+                                        alt={course.attributes.Title}
+                                        height="140"
+                                        image={course.attributes.ImageUrl}
+                                    />
+                                    <CardContent>
+                                        <Typography gutterBottom variant="h5" component="h2">
+                                            {course.attributes.Title}
+                                        </Typography>
+                                        {/* <Typography variant="body2" color="textSecondary" component="p">
+                                            {course.attributes.Description}
+                                        </Typography> */}
+                                    </CardContent>
+                                </CardActionArea>
+                            </Card>
+                        </Grid>
+                    ))}
+                </Grid>
             </div>
         </>
     );

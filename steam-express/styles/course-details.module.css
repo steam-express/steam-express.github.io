@@ -1,0 +1,14 @@
+.bannerImg {
+    overflow: hidden;
+    
+}
+
+.bannerImg img {
+    max-width: 100%;
+    height: auto;
+}
+
+.main-content {
+    display: inline-block;
+    width: 100%;
+}

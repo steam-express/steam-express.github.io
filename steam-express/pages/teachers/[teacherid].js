@@ -27,6 +27,7 @@ const TeacherDetails = ({ teacher }) => {
         <>
             <Head>
                 <title>{teacher.attributes.Name} | STEAM Express</title>
+                <link rel="icon" href="/steam-express-logo.ico" />
             </Head>
             <div>
                 {/* <Image src={course.attributes.image} alt={course.attributes.Title} width={400} height={400} /> */}
