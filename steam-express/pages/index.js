@@ -1,5 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Paper from '@mui/material/Paper'
+import Button from '@mui/material/Button'
+
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -12,15 +15,29 @@ export default function Home() {
       </Head>
       <div className={styles.container}>
         <main className={styles.main}>
-          <h1 className={styles.title}>
-            Welcome aboard the STEAM Express!
-          </h1>
+          <Paper 
+            style={{  
+              backgroundImage: "url(" + "https://res.cloudinary.com/steam-express/image/upload/v1642249149/cld-sample.jpg" + ")",
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              alignItems: 'center',
+            }}
+            className="paperContainer"
+          >
 
-          <p className={styles.description}>
-            Start your{' '}
-            <code className={styles.code}>STEAM Journey</code>
-            today!
-          </p>
+            <h1 className={styles.title}>
+              Welcome aboard the STEAM Express!
+            </h1>
+
+            <p className={styles.description}>
+              Start your{' '}
+              <code className={styles.code}>STEAM Journey</code>
+              today!
+            </p>
+
+            <Button href="/trial" className="homeTrialBtn">Book a Trial Class Now! &rarr;</Button>
+          </Paper>
 
           <div className={styles.grid}>
             <a href="https://nextjs.org/docs" className={styles.card}>
@@ -52,19 +69,6 @@ export default function Home() {
             </a>
           </div>
         </main>
-
-        <footer className={styles.footer}>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Powered by{' '}
-            <span className={styles.logo}>
-              <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-            </span>
-          </a>
-        </footer>
       </div>
     </>
   )

@@ -53,9 +53,6 @@ const Courses = ({ courses }) => {
                                         <Typography gutterBottom variant="h5" component="h2">
                                             {course.attributes.Title}
                                         </Typography>
-                                        {/* <Typography variant="body2" color="textSecondary" component="p">
-                                            {course.attributes.Description}
-                                        </Typography> */}
                                     </CardContent>
                                 </CardActionArea>
                             </Card>
