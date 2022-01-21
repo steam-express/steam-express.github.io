@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import PaperHeader from '../components/paper-header';
 
 const About = () => {
     return ( 
@@ -8,9 +9,11 @@ const About = () => {
                 <title>About Us | STEAM Express</title>
                 <link rel="icon" href="/steam-express-logo.ico" />
             </Head>
-            <div className="screen">
-                <h1>About Us</h1>
-            </div>
+            <main>
+                <PaperHeader image="https://res.cloudinary.com/steam-express/image/upload/v1642249126/sample.jpg">
+                    <h1 className="title">About Us</h1>
+                </PaperHeader>
+            </main>
         </>
      );
 }

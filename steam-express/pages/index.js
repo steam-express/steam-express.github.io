@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Paper from '@mui/material/Paper'
 import Button from '@mui/material/Button'
 
+import PaperHeader from '../components/paper-header'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -15,16 +16,7 @@ export default function Home() {
       </Head>
       <div className={styles.container}>
         <main className={styles.main}>
-          <Paper 
-            style={{  
-              backgroundImage: "url(" + "https://res.cloudinary.com/steam-express/image/upload/v1642249149/cld-sample.jpg" + ")",
-              backgroundPosition: 'center',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-              alignItems: 'center',
-            }}
-            className="paperContainer"
-          >
+          <PaperHeader image="https://res.cloudinary.com/steam-express/image/upload/v1642249149/cld-sample.jpg">
 
             <h1 className={styles.title}>
               Welcome aboard the STEAM Express!
@@ -36,8 +28,8 @@ export default function Home() {
               today!
             </p>
 
-            <Button href="/trial" className="homeTrialBtn">Book a Trial Class Now! &rarr;</Button>
-          </Paper>
+            <Button href="/trial" className={styles.homeTrialBtn}>Book a Trial Class Now! &rarr;</Button>
+          </PaperHeader>
 
           <div className={styles.grid}>
             <a href="https://nextjs.org/docs" className={styles.card}>

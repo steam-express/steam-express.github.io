@@ -5,10 +5,10 @@ const PaperHeader = (props) => {
     return (
         <Paper
         style={{  
-            backgroundImage: "url(" + "https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" + ")",
+            backgroundImage: `url(${props.image})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat'
+            backgroundRepeat: 'no-repeat',
           }}
           className="paperContainer"
         >

@@ -4,6 +4,8 @@ import { Paper } from "@mui/material";
 import { MdEmail, MdFacebook, MdOutlineLocationCity } from "react-icons/md";
 import { RiInstagramFill, RiWhatsappFill } from "react-icons/ri";
 
+import PaperHeader from "../components/paper-header";
+
 const Contact = () => {
     return ( 
         <>
@@ -12,18 +14,9 @@ const Contact = () => {
                 <link rel="icon" href="/steam-express-logo.ico" />
             </Head>
             <div className="screen">
-                <Paper
-                    style={{  
-                        backgroundImage: "url(" + "https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" + ")",
-                        backgroundPosition: 'center',
-                        backgroundSize: 'cover',
-                        backgroundRepeat: 'no-repeat',
-                        justifyContent: 'center',
-                      }}
-                      className="paperContainer"
-                >
-                    <h1>Contact Us</h1>
-                </Paper>
+                <PaperHeader image="https://res.cloudinary.com/steam-express/image/upload/v1642249149/cld-sample.jpg">
+                    <h1 className="title">Contact Us</h1>
+                </PaperHeader>
 
                 <p><a href="mailto:steamexpress.hk@gmail.com"><MdEmail />&ensp; Email: steamexpress.hk@gmail.com</a></p>
                 <p><a href="https://wa.me/85251164998"><RiWhatsappFill />&ensp; Whatsapp: 5116 4998</a></p>

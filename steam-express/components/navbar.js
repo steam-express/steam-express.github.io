@@ -45,6 +45,7 @@ const Navbar = () => {
                     <>
                         {/* <Link href="/"><a>Home</a></Link> */}
                         <Link href="/courses"><a>Courses</a></Link>
+                        <Link href="/workshops"><a>Workshops</a></Link>
                         <Link href="/contact"><a>Contact Us</a></Link>
                         {/* <Link href="/teachers"><a>Teachers</a></Link> */}
                         <Link href="/about"><a>About</a></Link>
@@ -66,6 +67,13 @@ const Navbar = () => {
                     <div className="BurgerItem" onClick={() => setShowBurger(false)}>
                         <p>
                             <a>Courses</a>
+                        </p>
+                    </div>
+                </Link>
+                <Link href="/workshops">
+                    <div className="BurgerItem" onClick={() => setShowBurger(false)}>
+                        <p>
+                            <a>Workshops</a>
                         </p>
                     </div>
                 </Link>
