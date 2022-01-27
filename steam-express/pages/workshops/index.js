@@ -12,6 +12,7 @@ import { Grid } from '@mui/material';
 // import { CardActionArea } from '@mui/material';
 
 import styles from '../../styles/courses.module.css';
+import PaperHeader from '../../components/paper-header';
 
 export const getStaticProps = async () => {
     const res = await fetch('http://localhost:1337/api/workshops');
@@ -24,15 +25,17 @@ export const getStaticProps = async () => {
     }
 }
 
-const Courses = ({ workshops }) => {
+const Workshops = ({ workshops }) => {
     return (
         <>
             <Head>
-                <title>All Courses | STEAM Express</title>
+                <title>All Workshops | STEAM Express</title>
                 <link rel="icon" href="/steam-express-logo.ico" />
             </Head>
-            <div className="screen">
-                <h1 className="title">All Courses</h1>
+            <main className="screen">
+                <PaperHeader image="https://res.cloudinary.com/steam-express/image/upload/v1642249126/sample.jpg">
+                    <h1 className="title">All Workshops</h1>
+                </PaperHeader>
                 <Grid container
                     spacing={2}
                     className="courseGrid"
@@ -42,7 +45,7 @@ const Courses = ({ workshops }) => {
                     {workshops.data.map(workshop => (
                         <Grid item>
                             <Card key={"card_" + workshop.id} variant="outlined" className={styles.courseCard}>
-                                <CardActionArea href={`/courses/${workshop.id}`} key={workshop.id}>
+                                <CardActionArea href={`/workshops/${workshop.id}`} key={workshop.id}>
                                     <CardMedia
                                         component="img"
                                         alt={workshop.attributes.Title}
@@ -59,9 +62,9 @@ const Courses = ({ workshops }) => {
                         </Grid>
                     ))}
                 </Grid>
-            </div>
+            </main>
         </>
     );
 }
 
-export default Courses;
+export default Workshops;
